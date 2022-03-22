@@ -10,7 +10,7 @@ def Calculate_IPV6(convertlist, chosen):
     if chosen == True:
         for i in range(4):
             ipv6 = str(input("Adja meg az IPv6 cim {}. tagját!: ".format(i+1)))
-            while len(ipv6) > 4:
+            while len(ipv6) > 2:
                 ipv6 = str(input("Adja meg az IPv6 cim {}. tagját!: ".format(i+1)))
             IPV6FULL.append(ipv6)
             ipv6 = ""
@@ -23,8 +23,8 @@ def Calculate_IPV6(convertlist, chosen):
     else:
         if source_address == 1:
             for x in range(len(IPV4FULL)):
-                ipv6 = hex(IPV4FULL[x]) #Az IPV4 es lisámnak bizonyos elemét átalakitom binbe
-                ipv6 = ipv6[2:] #bin megjelőést leszedem
+                ipv6 = hex(IPV4FULL[x])
+                ipv6 = ipv6[2:]
                 IPV6FULL.append(ipv6)
                 ipv6 = ""
             for x in range(len(IPV6FULL)):
@@ -35,8 +35,8 @@ def Calculate_IPV6(convertlist, chosen):
             ipv6 = ipv6[:-2]
         else:
             for x in range(len(convertlist)):
-                ipv6 = hex(convertlist[x]) #Az IPV4 es lisámnak bizonyos elemét átalakitom binbe
-                ipv6 = ipv6[2:] #bin megjelőést leszedem
+                ipv6 = hex(convertlist[x])
+                ipv6 = ipv6[2:]
                 IPV6FULL.append(ipv6)
                 ipv6 = ""
             for x in range(len(IPV6FULL)):
@@ -157,4 +157,4 @@ with open("cimek.txt", "w", encoding="utf8") as q:
         else:
             current_write = str(writeable[i]) + "\n"
         q.write(current_write)
-print("Az általad meg adott:\n IPV4 cim: {}\n IPV6 cim: x : x : x : x : x : x : {}\n Binary cim: {}".format(ipv4, ipv6, bin1))
+print("Az általad meg adott:\n IPV4 cim: {}\n IlPV6 cim: x : x : x : x : x : x : {}\n Binary cim: {}".format(ipv4, ipv6, bin1))
