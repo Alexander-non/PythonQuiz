@@ -137,7 +137,7 @@ ipv4 = 0
 source_address = int(input("Milyen cimet akarasz megadni? [ (1) BIN / (2) IPV4 / (3) IPV6 ]: "))
 while source_address > 3 or source_address < 1:
     source_address = int(input("Milyen cimet akarasz megadni? [ (1) BIN / (2) IPV4 / (3) IPV6 ]: "))
-with open("cimek.txt", "w", encoding="utf8") as q:
+with open("cimek.txt", "a", encoding="utf8") as q:
     if source_address == 1:
         Calculate_BIN("", True)
         Calculate_IPV4(BINFULL, False)
